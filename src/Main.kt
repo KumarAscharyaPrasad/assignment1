@@ -3,7 +3,7 @@ import java.io.File
 fun main() {
 }
 
-//1
+//1->Find Largest
 fun findLargest(x: Int, y: Int, z: Int): Int {
     if (x > y && x > z)
         return x
@@ -14,7 +14,7 @@ fun findLargest(x: Int, y: Int, z: Int): Int {
 }
 
 
-//2
+//2->Date Validation
 fun validateDate(date: String): Boolean {
     var result = false
     val pattern = Regex("^(?:(?:31(\\/|-|\\.)(?:0?[13578]|1[02]|(?:Jan|Mar|May|Jul|Aug|Oct|Dec)))\\1|(?:(?:29|30)(\\/|-|\\.)(?:0?[1,3-9]|1[0-2]|(?:Jan|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec))\\2))(?:(?:1[6-9]|[2-9]\\d)?\\d{2})\$|^(?:29(\\/|-|\\.)(?:0?2|(?:Feb))\\3(?:(?:(?:1[6-9]|[2-9]\\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))\$|^(?:0?[1-9]|1\\d|2[0-8])(\\/|-|\\.)(?:(?:0?[1-9]|(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep))|(?:1[0-2]|(?:Oct|Nov|Dec)))\\4(?:(?:1[6-9]|[2-9]\\d)?\\d{2})\$")
@@ -23,6 +23,7 @@ fun validateDate(date: String): Boolean {
 
     return result
 }
+
 
 //3
 fun multiplyMatrix(firstMatrix: Array<Int>, secondMatrix: Array<Int>): Array<Int> {
@@ -38,7 +39,8 @@ fun multiplyMatrix(firstMatrix: Array<Int>, secondMatrix: Array<Int>): Array<Int
     return resultMatrix
 }
 
-//4
+
+//4->print pascals triangle
 fun printPascalTriangle(n: Int) {
     var digit: Int;
     for (y in 1..n) {
@@ -51,8 +53,9 @@ fun printPascalTriangle(n: Int) {
     }
 }
 
-//5
-fun readFile(fileName: String): List<String> {
+
+//5->read file and remove the duplicates and print sorted
+fun readFile(fileName: String) {
     val wordsSet = mutableSetOf<String>()
     try {
         val input = File(fileName).useLines { it.toMutableList() }
@@ -62,10 +65,12 @@ fun readFile(fileName: String): List<String> {
     } catch (e: Exception) {
         e.printStackTrace()
     }
-    return wordsSet.sorted()
+    for (item in wordsSet.sorted())
+        println(item)
 }
 
-//7
+
+//7-> generate Fibonacci Sequence of given integer
 fun generateFibonacciSequence(n: Int) {
     var firstDigit = 0
     var secondDigit = 1
@@ -78,7 +83,8 @@ fun generateFibonacciSequence(n: Int) {
     }
 }
 
-//8
+
+//8 ->reverse an array of Any type
 fun reverseArray(x: Array<Any>): Array<Any>? {
     var len: Int = x.size
     val result: Array<Any>? = Array(len, { i -> i })
@@ -89,7 +95,8 @@ fun reverseArray(x: Array<Any>): Array<Any>? {
     return result
 }
 
-//10
+
+//10-> add two arrays and return reversed & sorted array
 fun mergeSorted(x: Array<Int>, y: Array<Int>): Array<Int> {
     val len = x.size + y.size
     val result = Array<Int>(len, { i -> i })
@@ -105,7 +112,14 @@ fun mergeSorted(x: Array<Int>, y: Array<Int>): Array<Int> {
     return result.sorted().reversed().toTypedArray()
 }
 
-//13
+
+//11 finds the second largest value of given array
+fun secondLargest(inputArr: Array<Int>): Int {
+    return inputArr.sorted().toTypedArray().get(inputArr.size - 2)
+}
+
+
+//13 checks whether an array is sorted or not
 fun isSorted(inputArr: Array<Int>): Boolean {
     var result = false
     var len = inputArr.size
@@ -122,7 +136,8 @@ fun isSorted(inputArr: Array<Int>): Boolean {
     return result
 }
 
-//15
+
+//15reverse elements of List
 fun reverseElements(inputList: MutableList<Double>): MutableList<Double> {
     var len = inputList.size
     var result = Array<Double>(len, { i -> i.toDouble() })
