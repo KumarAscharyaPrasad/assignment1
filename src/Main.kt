@@ -140,7 +140,7 @@ fun isSorted(inputArr: Array<Int>): Boolean {
 //15reverse elements of List
 fun reverseElements(inputList: MutableList<Double>): MutableList<Double> {
     var len = inputList.size
-    var result = Array<Double>(len, { i -> i.toDouble() })
+    var result = Array(len, { i -> i.toDouble() })
     for (i in 0 until len) {
         result.set(len - 1, inputList.get(i))
         len -= 1
