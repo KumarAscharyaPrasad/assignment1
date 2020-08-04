@@ -1,7 +1,6 @@
 import java.io.File
 
 fun main() {
-
 }
 
 //1
@@ -16,7 +15,13 @@ fun findLargest(x: Int, y: Int, z: Int): Int {
 
 
 //2
-fun validateDate(date: String) {
+fun validateDate(date: String): Boolean {
+    var result = false
+    val pattern = Regex("^(?:(?:31(\\/|-|\\.)(?:0?[13578]|1[02]|(?:Jan|Mar|May|Jul|Aug|Oct|Dec)))\\1|(?:(?:29|30)(\\/|-|\\.)(?:0?[1,3-9]|1[0-2]|(?:Jan|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec))\\2))(?:(?:1[6-9]|[2-9]\\d)?\\d{2})\$|^(?:29(\\/|-|\\.)(?:0?2|(?:Feb))\\3(?:(?:(?:1[6-9]|[2-9]\\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))\$|^(?:0?[1-9]|1\\d|2[0-8])(\\/|-|\\.)(?:(?:0?[1-9]|(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep))|(?:1[0-2]|(?:Oct|Nov|Dec)))\\4(?:(?:1[6-9]|[2-9]\\d)?\\d{2})\$")
+    if (pattern.matches(date))
+        result = true
+
+    return result
 }
 
 //3
@@ -116,10 +121,11 @@ fun isSorted(inputArr: Array<Int>): Boolean {
 
     return result
 }
+
 //15
 fun reverseElements(inputList: MutableList<Double>): MutableList<Double> {
     var len = inputList.size
-    var result = Array<Double>(len, { i -> i.toDouble()})
+    var result = Array<Double>(len, { i -> i.toDouble() })
     for (i in 0 until len) {
         result.set(len - 1, inputList.get(i))
         len -= 1
