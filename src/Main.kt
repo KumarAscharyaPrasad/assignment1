@@ -1,9 +1,7 @@
 import java.io.File
 
 fun main() {
-    for (item in reverseElements(mutableListOf(10.0, 25.6, 0.3, 5.6))) {
-        println(item)
-    }
+
 }
 
 //1
@@ -118,7 +116,7 @@ fun isSorted(inputArr: Array<Int>): Boolean {
 
     return result
 }
-
+//15
 fun reverseElements(inputList: MutableList<Double>): MutableList<Double> {
     var len = inputList.size
     var result = Array<Double>(len, { i -> i.toDouble()})
